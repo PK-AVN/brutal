@@ -1,13 +1,15 @@
+'use client'
 import Dashboard from "@/components/Dashboard";
 import Login from "@/components/Login";
 import Main from "@/components/Main";
+import useAuthStore from "@/store/authStore";
 
 const DashboardPage = () => {
-  const isUserAuthenticated = false;
+  const { isAuthenticated } = useAuthStore();
 
   let renderChildren = <Login />;
 
-  if (isUserAuthenticated) {
+  if (isAuthenticated) {
     renderChildren = <Dashboard />;
   }
 

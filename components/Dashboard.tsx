@@ -1,5 +1,8 @@
+import useAuthStore from "@/store/authStore";
+
 const Dashboard = () => {
-  return <div>Dashboard</div>;
+    const { user } = useAuthStore();
+    return <div> Hello {user?.name}</div>;
 };
 
 export default Dashboard;
