@@ -69,7 +69,7 @@ const Login = () => {
           className="bg-white border border-gray-300 text-gray-700 font-bold py-2 px-4 rounded w-full flex items-center justify-center hover:bg-gray-100"
           onClick={handleGoogleSignIn}
         >
-          Sign const first = useRef(second) with Google
+          Sign up with Google
         </button>
       </div>
     </div>
