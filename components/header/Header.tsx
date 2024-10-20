@@ -1,15 +1,12 @@
-import { authOptions } from "@/nextAuth";
-import { getServerSession } from "next-auth";
 import Image from "next/image";
 import HeaderClient from "./HeaderClient";
 
 const Header = async () => {
-  const session = await getServerSession(authOptions);
-  console.log(session, "session");
-  const user = session?.user || "";
+  // const session = await getServerSession(authOptions);
 
   return (
     <header className="p-4 sm:p-8 h-3 bg-teal-700 py-4 shadow-md flex items-center justify-between text-white">
+      <h1 className="text-base sm:text-lg">Brutal</h1>
       <div className="flex items-center justify-center w-full md:w-auto">
         <Image src="" alt="app-logo" />
       </div>
@@ -27,7 +24,7 @@ const Header = async () => {
         </a>
       </nav>
 
-      <HeaderClient user={user} />
+      <HeaderClient />
 
       {/* <div className=" hidden md:flex space-x-4">
         <button className="bg-transparent hover:bg-white text-white hover:text-teal-600 font-semibold py-2 px-4 border border-white rounded">

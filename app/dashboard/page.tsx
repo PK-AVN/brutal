@@ -1,15 +1,15 @@
-'use client'
 import Dashboard from "@/components/Dashboard";
 import Login from "@/components/Login";
 import Main from "@/components/Main";
-import useAuthStore from "@/store/authStore";
+import { authOptions } from "@/nextAuth";
+import { getServerSession } from "next-auth";
 
-const DashboardPage = () => {
-  const { isAuthenticated } = useAuthStore();
+const DashboardPage = async () => {
+  const session = await getServerSession(authOptions);
 
   let renderChildren = <Login />;
 
-  if (isAuthenticated) {
+  if (session) {
     renderChildren = <Dashboard />;
   }
 
